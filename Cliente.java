@@ -2,15 +2,31 @@
 //publicar um projeto
 
 public class Cliente{
-  String descProjeto;
-  String nomeProjeto;
-  String apagar;
-  String criar;
-  String atualizar;
-  String salvar;
-  
-  public Cliente(){
-        System.out.println("Olá, sou a classe cliente!");
-
+ private String descProjeto;
+private String nomeProjeto;
+     /*  String apagar;
+    String criar;
+    String atualizar;
+    String salvar;
+*/
+  public Cliente(String descProjeto, String nomeProjeto ){
+    setDescP(descProjeto);
+    setDescN(nomeProjeto);
   }
+//sets
+public void setDescP(String descProjeto){
+  this.descProjeto=descProjeto;
+}
+
+public void setDescN(String nomeProjeto){
+  this.nomeProjeto=nomeProjeto;
+}
+  //gets
+  public String getDes(){
+    return descProjeto;
+  }
+  public String getNome(){
+    return nomeProjeto;
+  }
+  
 }
