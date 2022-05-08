@@ -1,4 +1,11 @@
-<h1>Projeto criado para a disciplina de programação orientada a objetos</h1>
-<h2>Tecnologias utilizadas - java, replit.it, netbeans </h2>
+# Br_Devs
+//texto de descrição
+### Projeto criado para a disciplina de programação orientada a objetos
 
-<h2>Objetivos - </h2>
+### Tecnologias utilizadas: 
+- Java
+- Git
+- Replit.it
+- Netbeans
+
+### Objetivos
