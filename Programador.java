@@ -12,8 +12,15 @@ public class Programador extends Usuario{
   public String getEspecialidade() {
     return especialidade;
   }
+
+  
   public void setEspecialidade(String especialidade) {
-    this.especialidade = especialidade;
+    if(especialidade == ""){
+      this.especialidade = especialidade;
+    }else{
+      System.out.println("Algo deu errado");
+    }
+    
   }
 
 }
