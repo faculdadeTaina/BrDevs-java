@@ -33,8 +33,6 @@ System.out.println("Voce escolheu a opção Projeto no seu menu!.");
   case 2:
   System.out.println("Chegou na pate do programador");
   Programador especialidade= new Programador("marcos", "marcos@gmail.com", "lo", "123", "");
-  
- 
   break;
   case 3:
   System.out.println("Chegou na parte dos clientes");
