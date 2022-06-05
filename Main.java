@@ -31,11 +31,18 @@ System.out.println("Voce escolheu a opção Projeto no seu menu!.");
   break;
 
   case 2:
-  System.out.println("Chegou na pate do programador");
-  Programador especialidade= new Programador("marcos", "marcos@gmail.com", "lo", "123", "");
+ // System.out.println("Chegou na pate do programador");
+  Programador especialida1= new Programador("marcos", "marcos@gmail.com", "lo", "123", "php");
+ // Programador especialida2= new Programador("marcos", "marcos@gmail.com", "lo", "123", "php");
+  especialida1.setEspecialidade("javascript");
+  //especialida1.getEspecialidade();
+  System.out.printf("Ola ", especialida1);
+  //Programador.setNome=2
+  
   break;
   case 3:
   System.out.println("Chegou na parte dos clientes");
+
 
   break;
 
