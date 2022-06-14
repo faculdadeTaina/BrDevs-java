@@ -1,12 +1,14 @@
-
 # Br_Devs
-//texto de descrição
+
 ### Projeto criado para a disciplina de programação orientada a objetos
 
 ### Tecnologias utilizadas: 
 - Java
 - Git
 - Replit.it
-- Netbeans
+- VS Code
+- JDBC
+- MySQL
 
 ### Objetivos
+BR_Devs é uma plataforma feita para divulgar ideias de sites e apps, onde os usuários, na posição de clientes, enviam descrição de ideias e programadores que também façam parte da plataforma, podem vê-las e escolher alguma para desenvolver.
