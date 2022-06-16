@@ -6,11 +6,11 @@ package poo.brdevs.app;
 import java.util.Scanner;
 
 public class DevCliente extends Usuario{
-    private int qtdProjetos;
+    private static int qtdProjetos;
   //CONSTRUTOR
-    public DevCliente(String nome, String email, String login, String senha) {
+    public DevCliente(String nome, String email, String login, String senha, String qtdProjetos) {
       super(nome, email, login, senha);
-      int qtdProjetos = 0;
+      // int qtdProjetos = 0;
     }
   //MÉTODOS
     @Override 
@@ -89,11 +89,11 @@ public class DevCliente extends Usuario{
       }
     
   //GETTERS AND SETTERS
-    public int getQtdProjetos() {
+    public static int getQtdProjetos() {
       return qtdProjetos;
     }
 
-    public void setQtdProjetos(){
+    public void setQtdProjetos(int i){
         
     }
   

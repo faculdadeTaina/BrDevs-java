@@ -3,11 +3,12 @@
 
 package poo.brdevs.app;
 
-public abstract class Usuario implements Autenticacao {
-    protected String nome;
-    protected String email;
-    protected String login;
-    protected String senha;
+public abstract class Usuario{
+    protected static int id;
+    protected static String nome;
+    protected static String email;
+    protected static String login;
+    protected static String senha;
 //CONSTRUTOR    
     public Usuario(String nome, String email, String login, String senha) {
         this.nome = nome;
@@ -23,42 +24,44 @@ public abstract class Usuario implements Autenticacao {
     public abstract void fazerCadastro();
 
 //GETTERS AND SETTERS
-    public String getNome() {
+    public static int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        Usuario.id = id;
+    }
+
+    public static String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        Usuario.nome = nome;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Usuario.email = email;
     }
 
-    public String getLogin() {
+    public static String getLogin() {
         return login;
     }
 
     public void setLogin(String login) {
-        this.login = login;
+        Usuario.login = login;
     }
 
-    public String getSenha() {
+    public static String getSenha() {
         return senha;
     }
 
     public void setSenha(String senha) {
-        this.senha = senha;
+        Usuario.senha = senha;
     }
 
-    @Override
-    public String toString() {
-        return "Nome = " + nome + ", email = " + email + ", login = " + login;
-    }
-
-    
 }

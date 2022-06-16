@@ -1,4 +1,5 @@
 //DENISON LUCAS E TAINA MIRANDA
+//Arquivo de conexão com o banco
 
 package poo.brdevs.connection;
 

@@ -6,11 +6,11 @@ package poo.brdevs.app;
 import java.util.Scanner;
 
 public class Programador extends Usuario{
-  private String especialidade; //linguagem(s) em que o programador é mais capacitado
+  private static String especialidade; //linguagem(s) em que o programador é mais capacitado
 //CONSTRUTOR
   public Programador(String nome, String email, String login, String senha, String especialidade) {
     super(nome, email, login, senha);
-    this.especialidade = especialidade;
+    Programador.especialidade = especialidade;
   }
 //MÉTODOS
   @Override
@@ -92,14 +92,14 @@ public class Programador extends Usuario{
     }
 
 //GETTERS AND SETTERS
-  public String getEspecialidade() {
+  public static String getEspecialidade() {
     return especialidade;
   }
 
   
   public void setEspecialidade(String especialidade) {
     if(especialidade == ""){
-      this.especialidade = especialidade;
+      Programador.especialidade = especialidade;
     }else{
       System.out.println("Algo deu errado");
     }

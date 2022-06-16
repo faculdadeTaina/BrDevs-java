@@ -2,9 +2,12 @@
 
 package poo.brdevs.app;
 
+import java.sql.Date;
 import java.util.Scanner;
 
 public class Projeto {
+    protected int id;
+    protected Date createTime;
     protected String nome;
     protected String descrição;
     protected String tecnologia;
@@ -66,6 +69,22 @@ public class Projeto {
     }
 
 //GETTERS AND SETTERS
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date create_time) {
+        this.createTime = create_time;
+    }
+
     public String getNomeProjeto() {
         return nome;
     }
