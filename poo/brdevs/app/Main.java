@@ -1,13 +1,33 @@
 // DENISON LUCAS E TAINA MIRANDA
+//classe principal
 
 package poo.brdevs.app;
+
 import java.util.Scanner;
 
-//class principal
+import javax.sound.sampled.SourceDataLine;
+
+import poo.brdevs.dao.*;
+
 
 class Main {
   public static void main(String[] args) {
-    Scanner leitor = new Scanner(System.in);
+    // TESTE DE VISUALIZAÇÃO DOS REGISTROS
+    // for(Projeto p : SelectsDAO.getProjetos()) {
+      // System.out.println("Projeto: " + p.getId() + " " + p.getNomeProjeto() + " " + p.getDscProjeto() + " " + p.getTecnologiaProjeto() + " " + p.getCreateTime());
+    // }
+
+    // TESTE DE REGISTROS NO BANCO
+    // InsertsDAO teste = new InsertsDAO();
+
+    // Programador prog  = new Programador("João Victor", "jvit@hotmail.com", "victorj", "senha123", "HTML, CSS, NodeJS");
+    
+    // InsertsDAO.cadastroProg(prog);
+    
+    // TESTE DE EXCLUSAO NO BANCO
+    // DeletesDAO.deleteClienteById(2);
+
+Scanner leitor = new Scanner(System.in);
 
 //menu 
 System.out.println("Bem-vindo ao sistema!.");
@@ -50,6 +70,6 @@ System.out.println("Voce escolheu a opção Projeto no seu menu!.");
 
 }
 
-//fim do menu
+//fim do menu*/
   }
 }
