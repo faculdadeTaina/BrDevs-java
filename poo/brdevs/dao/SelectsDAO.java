@@ -59,7 +59,7 @@ public class SelectsDAO {
             return lista_projetos;
     }
 //===========================================
-    public List<DevCliente> getClientes() {
+    public static List<DevCliente> getClientes() {
         String sql = "SELECT * FROM  devcliente";
 
         List<DevCliente> lista_clientes = new ArrayList<DevCliente>();

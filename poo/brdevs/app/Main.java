@@ -30,18 +30,19 @@ class Main {
 Scanner leitor = new Scanner(System.in);
 
 //menu 
-System.out.println("Bem-vindo ao sistema!.");
+System.out.println("Bem-vindo ao sistema!");
 
 int menu=0;
-System.out.print("Digite 1 para ver projetos:\n Digite 2 para ver para ver a aba programador(a) no systema:\n Digite 3 para ver a aba cliente:\n Qual sua escolha?" );
+System.out.print(" Digite 1 para ver projetos\n Digite 2 para ver para ver a aba programador no sistema\n Digite 3 para ver a aba cliente\n Qual sua escolha?" );
 
 menu=leitor.nextInt();
 System.out.printf("A sua escolha foi %s:",menu);
 
+String nome;
 switch (menu){
   case 1:
   int pro1=0;
-  System.out.println("Chegou na parte de projetos:\n Digite 1 para fazer enviar: \n Digite para fazer excluir: \n Digite 3 para atualizar");
+  System.out.println(" Chegou na parte de projetos\n Digite 1 para enviar um novo projeto \n Digite 2 para excluir um projeto \n Digite 3 para atualizar um projeto");
 pro1=leitor.nextInt();
 
 Projeto projeto1=new Projeto("teste", "teste1", null, null);
@@ -50,23 +51,18 @@ DeletesDAO deleteProj= new DeletesDAO();
 UpdatesDAO updateProj = new UpdatesDAO();
 
 
-System.out.println("Voce escolheu a opção Projeto no seu menu!.");
+System.out.println("Voce escolheu a opção Projeto!");
 if(pro1 ==1){
-  projeto1.enviarProjeto();
   inserirProj.cadastroProj(projeto1);
 
 }else if(pro1 ==2){
-  projeto1.excluirProjeto();
-  //contém um erro que é de só apagar com id
-  deleteProj.deleteProjById(2);
+  deleteProj.deleteProjByName(nome);
 
 }else if(pro1 == 3){
-projeto1.atualizarprojeto();
-
 updateProj.updateProj(projeto1);
 
 }else{
-  System.out.println("Algo deu errado com o sistema");
+  System.out.println("Algo deu errado com o sistema.");
 
 }
 
@@ -74,7 +70,7 @@ updateProj.updateProj(projeto1);
 
   case 2:
   int p1=0;
-  System.out.println("Chegou na parte do programador(a):\n Digite 1 para fazer cadastro: \n Digite para fazer login: \n Digite 3 para redefinir senha");
+  System.out.println(" Chegou na parte do programador:\n Digite 1 para fazer cadastro \n Digite 2 para fazer login \n Digite 3 para redefinir senha");
 p1=leitor.nextInt();
 System.out.printf("A sua escolha foi %s:",p1);
 
@@ -85,7 +81,7 @@ UpdatesDAO updateProG = new UpdatesDAO();
 
 if(p1 == 1){
   programador1.fazerCadastro();
-  inserirProG.cadastroProg(programador1);
+  InsertsDAO.cadastroProg(programador1);
 
 }else if(p1 == 2){
   programador1.fazerLogin();
@@ -93,7 +89,7 @@ if(p1 == 1){
 
 }else if(p1 ==3){
   programador1.redefinirSenha();
-  deleteProG.deleteProgById(1);
+  DeletesDAO.deleteProgByName(nome);
   //contém erro
 }else{
   System.out.println("Algo deu errado com o sistema");
@@ -103,7 +99,7 @@ if(p1 == 1){
   case 3:
 
 int cli=0;
-System.out.println("Chegou na parte dos clientes:\n Digite 1 para fazer cadastro: \n Digite para fazer login: \n Digite 3 para redefinir senha: \n Digite 4 para atualizar cadastro");
+System.out.println(" Chegou na parte de Cliente\n Digite 1 para fazer cadastro \n Digite 2 para fazer login \n Digite 3 para redefinir senha \n Digite 4 para atualizar cadastro");
 
 cli=leitor.nextInt();
 DevCliente cliente1= new DevCliente("Leo", "leo@gmail.com", "Leo", "123", "3");
@@ -113,17 +109,16 @@ DeletesDAO deleteCliente= new DeletesDAO();
 UpdatesDAO updateCliente = new UpdatesDAO();
 if(cli ==1){
   cliente1.fazerCadastro();
-  inserirCliente.cadastroCliente(cliente1);
+  InsertsDAO.cadastroCliente(cliente1);
 
 }else if(cli ==2){
-  cliente1.fazerLogin();
+  SelectsDAO.getClientes();
 
 }else if(cli==3){
   cliente1.redefinirSenha();
-  deleteCliente.deleteClienteById(5);
   //contém erros
 }else if(cli ==4){
-updateCliente.updateDevCliente(cliente1);
+UpdatesDAO.updateDevCliente(cliente1);
 }else{
   System.out.println("Algo deu errado com o sistema");
 }
