@@ -12,3 +12,10 @@ BR_Devs é uma plataforma feita para divulgar ideias de sites e apps, onde os us
 - VS Code
 - JDBC
 - MySQL
+
+### Pre usage
+- MySQL Workbench
+- mysql-connector version 8.0.29
+- O usuário do banco deve ser root e a senha poo2022
+- O nome do banco deve ser br_devs_db
+- O código para criação das tabelas do banco estão no arquivo Script_Tables.sql
