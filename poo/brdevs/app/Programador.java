@@ -98,11 +98,6 @@ public class Programador extends Usuario{
 
   
   public void setEspecialidade(String especialidade) {
-    if(especialidade == ""){
-      Programador.especialidade = especialidade;
-    }else{
-      System.out.println("Algo deu errado");
-    }
     
   }
 

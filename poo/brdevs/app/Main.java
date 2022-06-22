@@ -1,5 +1,4 @@
 // DENISON LUCAS E TAINA MIRANDA
-//classe principal
 
 package poo.brdevs.app;
 
@@ -14,8 +13,14 @@ class Main {
   public static void main(String[] args) {
     // TESTE DE VISUALIZAÇÃO DOS REGISTROS
     // for(Projeto p : SelectsDAO.getProjetos()) {
-      // System.out.println("Projeto: " + p.getId() + " " + p.getNomeProjeto() + " " + p.getDscProjeto() + " " + p.getTecnologiaProjeto() + " " + p.getCreateTime());
+    //    System.out.println("Projeto: " + p.getId() + " " + p.getNomeProjeto() + " " + p.getDscProjeto() + " " + p.getTecnologiaProjeto() + " " + p.getCreateTime());
     // }
+    // for(DevCliente c : SelectsDAO.getClientes()) {
+    //      System.out.println("Usuario DevCliente: " + c.getId() + " " + c.getNome() + " " + c.getEmail() + " " + c.getLogin() + " " + c.getQtdProjetos());
+    //   }
+  //   for(Programador p : SelectsDAO.getProgramadores()) {
+  //     System.out.println("Programador: " + p.getId() + " " + p.getNome() + " " + p.getEmail() + " " + p.getLogin() + " " + p.getEspecialidade());
+  //  }
 
     // TESTE DE REGISTROS NO BANCO
     // InsertsDAO teste = new InsertsDAO();
@@ -24,49 +29,112 @@ class Main {
     
     // InsertsDAO.cadastroProg(prog);
     
-    // TESTE DE EXCLUSAO NO BANCO
-    // DeletesDAO.deleteClienteById(2);
+    // TESTES DE EXCLUSAO NO BANCO
+    // DeletesDAO.deleteClienteById(1); 
+    // DeletesDAO.deleteClienteByName("Marcelo");
+    // DeletesDAO.deleteProgById(1);
+    // DeletesDAO.deleteProgByName("");
+    // DeletesDAO.deleteProjById(1);
+    // DeletesDAO.deleteProjByName("");
 
 Scanner leitor = new Scanner(System.in);
 
 //menu 
-System.out.println("Bem-vindo ao sistema!.");
+System.out.println("Bem-vindo ao sistema!");
 
 int menu=0;
-System.out.print("Digite 1 para ver projetos:\n Digite 2 para ver para ver a aba programador(a) no systema:\n Digite 3 para ver a aba cliente:\n Qual sua escolha?" );
+System.out.print(" Digite 1 para ver projetos\n Digite 2 para ver para ver a aba programador\n Digite 3 para ver a aba cliente\n Qual sua escolha?" );
 
 menu=leitor.nextInt();
 System.out.printf("A sua escolha foi %s:",menu);
 
+String nome;
 switch (menu){
   case 1:
-Projeto projeto1=new Projeto("teste", "teste1", null, null);
-System.out.println("Voce escolheu a opção Projeto no seu menu!.");
+  int pro1=0;
+  System.out.println(" Chegou na parte de projetos\n Digite 1 para enviar um novo projeto \n Digite 2 para excluir um projeto \n Digite 3 para atualizar um projeto");
+pro1=leitor.nextInt();
 
-  projeto1.setNomeProjeto("Projeto vida");
-  projeto1.setDscProjeto("Quero um site para contar a história de vida das pessoas");
-  projeto1.setTecnologiaProjeto("Javascript");
-  
-  
-  System.out.println(projeto1.getNomeProjeto());
-  System.out.println(projeto1.getDscProjeto());
-  System.out.println(projeto1.getTecnologiaProjeto());
+Projeto projeto1=new Projeto("teste", "teste1", null, null);
+InsertsDAO inserirProj = new InsertsDAO();
+DeletesDAO deleteProj= new DeletesDAO();
+UpdatesDAO updateProj = new UpdatesDAO();
+
+
+System.out.println("Voce escolheu a opção Projeto!");
+if(pro1 ==1){
+  inserirProj.cadastroProj(projeto1);
+
+}else if(pro1 ==2){
+  deleteProj.deleteProjByName("");
+
+}else if(pro1 == 3){
+updateProj.updateProj(projeto1);
+
+}else{
+  System.out.println("Algo deu errado com o sistema.");
+
+}
+
   break;
 
   case 2:
-  System.out.println("Chegou na pate do programador");
-  Programador especialidade= new Programador("marcos", "marcos@gmail.com", "lo", "123", "");
-  
- 
-  break;
-  case 3:
-  System.out.println("Chegou na parte dos clientes");
+  int p1=0;
+  System.out.println(" Chegou na parte do programador:\n Digite 1 para fazer cadastro \n Digite 2 para fazer login \n Digite 3 para redefinir senha");
+p1=leitor.nextInt();
+System.out.printf("A sua escolha foi %s:",p1);
+
+  Programador programador1= new Programador("marcos", "marcos@gmail.com", "lo", "123", "");
+  InsertsDAO inserirProG = new InsertsDAO();
+DeletesDAO deleteProG= new DeletesDAO();
+UpdatesDAO updateProG = new UpdatesDAO();
+
+if(p1 == 1){
+  programador1.fazerCadastro();
+  InsertsDAO.cadastroProg(programador1);
+
+}else if(p1 == 2){
+  programador1.fazerLogin();
+  updateProG.updateProg(programador1);
+
+}else if(p1 ==3){
+  programador1.redefinirSenha();
+  DeletesDAO.deleteProgByName("");
+}else{
+  System.out.println("Algo deu errado com o sistema");
+}
 
   break;
+  case 3:
+
+int cli=0;
+System.out.println(" Chegou na parte de Cliente\n Digite 1 para fazer cadastro \n Digite 2 para fazer login \n Digite 3 para redefinir senha \n Digite 4 para atualizar cadastro");
+
+cli=leitor.nextInt();
+DevCliente cliente1= new DevCliente("Leo", "leo@gmail.com", "Leo", "123", "3");
+//System.out.printf("A sua escolha foi %s:",cli);
+InsertsDAO inserirCliente = new InsertsDAO();
+DeletesDAO deleteCliente= new DeletesDAO();
+UpdatesDAO updateCliente = new UpdatesDAO();
+if(cli ==1){
+  cliente1.fazerCadastro();
+  InsertsDAO.cadastroCliente(cliente1);
+
+}else if(cli ==2){
+  SelectsDAO.getClientes();
+
+}else if(cli==3){
+  cliente1.redefinirSenha();
+}else if(cli ==4){
+UpdatesDAO.updateDevCliente(cliente1);
+}else{
+  System.out.println("Algo deu errado com o sistema");
+}
+break;
 
   case 0:
   default:
-        System.out.println("Algo deu errado");
+        System.out.println("Algo deu errado no sistema ou a sessão expirou!");
 
 }
 

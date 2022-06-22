@@ -59,7 +59,7 @@ public class SelectsDAO {
             return lista_projetos;
     }
 //===========================================
-    public List<DevCliente> getClientes() {
+    public static List<DevCliente> getClientes() {
         String sql = "SELECT * FROM  devcliente";
 
         List<DevCliente> lista_clientes = new ArrayList<DevCliente>();
@@ -78,9 +78,9 @@ public class SelectsDAO {
                 cli.setId(rset.getInt("id"));
                 cli.setNome(rset.getString("nome"));
                 cli.setEmail(rset.getString("email"));
-                cli.setLogin(rset.getString("login"));
+                cli.setLogin(rset.getString("logon"));
                 cli.setSenha(rset.getString("senha"));
-                cli.setQtdProjetos(rset.getInt("quantidade de projetos"));
+                cli.setQtdProjetos(rset.getInt("qtdProjetos"));
                 lista_clientes.add(cli);
             }
         } catch (Exception e) {
@@ -103,7 +103,7 @@ public class SelectsDAO {
             return lista_clientes;
     }
 //===========================================
-    public List<Programador> getProgramadores() {
+    public static List<Programador> getProgramadores() {
         String sql = "SELECT * FROM  programador";
 
         List<Programador> lista_programadores = new ArrayList<Programador>();
@@ -122,7 +122,7 @@ public class SelectsDAO {
                 prog.setId(rset.getInt("id"));
                 prog.setNome(rset.getString("nome"));
                 prog.setEmail(rset.getString("email"));
-                prog.setLogin(rset.getString("login"));
+                prog.setLogin(rset.getString("logon"));
                 prog.setSenha(rset.getString("senha"));
                 prog.setEspecialidade(rset.getString("especialidade"));
                 lista_programadores.add(prog);
